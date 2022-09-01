@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "esnext",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "outDir": "build",
+        "skipLibCheck": true,
+        "moduleResolution": "nodenext"
+      },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
