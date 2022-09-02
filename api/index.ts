@@ -1,27 +1,19 @@
-import { ApolloServer, gql } from "apollo-server-express";
-import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
-import { createServer } from "http";
 import express from "express";
 import cors from "cors";
+import { createServer } from "http";
+import { ApolloServer } from "apollo-server-express";
+import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
+import { config } from "dotenv";
 
-const port = 4000
+import { typeDefs } from '../src/schema/type-defs'
+import { resolvers } from '../src/schema/resolvers'
+
+config()
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const httpServer = createServer(app);
-
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => "world",
-  }
-};
 
 const startApolloServer = async(app, httpServer) => {
     const server = new ApolloServer({
@@ -36,8 +28,12 @@ const startApolloServer = async(app, httpServer) => {
 
 startApolloServer(app, httpServer);
 
-// httpServer.listen(port, ()=>{
-//   console.log(`server is working at: localhost:${port}`)
-// })
+if(process.env.environment === 'dev'){
+  const { port } = process.env
+  httpServer.listen(port, ()=>{
+    console.log(`server is working at: localhost:${port}`)
+  })
+}
+
 
 export default httpServer;

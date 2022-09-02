@@ -1,16 +1,21 @@
 {
     "compilerOptions": {
         "target": "es2017",
-        "module": "esnext",
+        "module": "NodeNext",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
         "outDir": "build",
         "skipLibCheck": true,
-        "moduleResolution": "nodenext",
-        "allowSyntheticDefaultImports": true
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "lib":["ESNext"]
+        // "rootDir": "api",
+        // "baseUrl": "api",
       },
-    "include": ["api/**/*"],
+    
+    "include": ["api/**/*", "src"],
     "exclude": ["node_modules"]
 }
