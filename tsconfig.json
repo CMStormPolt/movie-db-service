@@ -8,8 +8,9 @@
         "sourceMap": true,
         "outDir": "build",
         "skipLibCheck": true,
-        "moduleResolution": "nodenext"
+        "moduleResolution": "nodenext",
+        "allowSyntheticDefaultImports": true
       },
-    "include": ["src/**/*"],
+    "include": ["api/**/*"],
     "exclude": ["node_modules"]
 }
