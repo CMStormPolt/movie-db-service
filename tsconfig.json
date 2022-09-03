@@ -12,8 +12,6 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "lib":["ESNext"]
-        // "rootDir": "api",
-        // "baseUrl": "api",
       },
     
     "include": ["api/**/*", "src"],
