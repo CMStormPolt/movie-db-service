@@ -5,7 +5,8 @@ export interface movieInt {
     year: number,
     isInTheaters: boolean,
     genres: [movieGenres],
-    stars: [Schema.Types.ObjectId]
+    stars: [Schema.Types.ObjectId],
+    posterUrl: string
 }
 
 export enum movieGenres {

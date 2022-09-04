@@ -4,16 +4,15 @@ import { movieGenres } from '../types/movies'
 
 export function connectToMongo(){
     const {mongoUrl} = process.env
-    // connect(`mongodb://${mongohost}/${mongodbName}`, (error => {
     connect(mongoUrl, (error => {
         if(error) { console.log(error) }
         else { 
-            console.log('successfully connected to mongoDB')
+            // console.log('successfully connected to mongoDB')
             // const newMovie = new MovieModel({
-            //     name: 'ugabuga',
-            //     year: 2014,
-            //     isInTheaters: true,
-            //     genres: [movieGenres.FANTASY],
+            //     name: 'Leon',
+            //     year: 1994,
+            //     isInTheaters: false,
+            //     genres: [movieGenres.ACTION],
             //     stars: []
             // })
             // newMovie.save((error)=>{

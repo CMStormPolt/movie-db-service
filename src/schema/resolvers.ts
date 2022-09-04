@@ -1,4 +1,3 @@
-import { userList } from '../fakeData'
 import movies from './movies'
 
 export const resolvers = {
