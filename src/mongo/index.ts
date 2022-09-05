@@ -9,10 +9,10 @@ export function connectToMongo(){
         else { 
             // console.log('successfully connected to mongoDB')
             // const newMovie = new MovieModel({
-            //     name: 'Leon',
-            //     year: 1994,
+            //     name: 'Interstellar',
+            //     year: 2014,
             //     isInTheaters: false,
-            //     genres: [movieGenres.ACTION],
+            //     genres: [movieGenres.FANTASY, movieGenres.DRAMA],
             //     stars: []
             // })
             // newMovie.save((error)=>{

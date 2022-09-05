@@ -2,8 +2,6 @@ import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
 
-   
-
     type Movie {
         _id: ID!,
         name: String!,
@@ -15,9 +13,16 @@ export const typeDefs = gql`
     }
 
     type Query {
-        movies: [Movie]!,
+        movies(input: SearchForMoviesInput): [Movie]!,
         movie(name: String!): Movie
     }  
+
+    input SearchForMoviesInput {
+        name: String,
+        year: Int,
+        sortByDate: String,
+        limit: Int
+    }
 
     
 `

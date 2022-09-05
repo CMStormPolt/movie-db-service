@@ -8,7 +8,10 @@ const movieMongoSchema = new Schema<movieInt>({
     genres: { type: [String], required: true, enum:  movieGenres},
     stars: { type: [Schema.Types.ObjectId], required: true },
     posterUrl: { type: String, required: false, default: "" },
+    createDate: { type: Date, required: true, default: Date.now}
   });
+
+movieMongoSchema.index({name: 'text'});
 
 const actorMongoSchema = new Schema<movieActor>({
     name: { type: String, required: true },

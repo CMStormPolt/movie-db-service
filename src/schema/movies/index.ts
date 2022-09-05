@@ -1,7 +1,7 @@
-import { moviesGet } from './movies'
+import { movieQueries } from './movies'
 
 export default {
     queries: {
-        movies: moviesGet
+        ...movieQueries
     }
 }
