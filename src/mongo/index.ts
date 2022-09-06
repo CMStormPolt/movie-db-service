@@ -1,13 +1,13 @@
 import { connect } from 'mongoose';
 import { MovieModel } from './movie'
-import { movieGenres } from '../types/movies'
+import { MovieGenres } from '../types/movies'
 
 export function connectToMongo(){
     const {mongoUrl} = process.env
     connect(mongoUrl, (error => {
         if(error) { console.log(error) }
         else { 
-            // console.log('successfully connected to mongoDB')
+            console.log('successfully connected to mongoDB')
             // const newMovie = new MovieModel({
             //     name: 'Interstellar',
             //     year: 2014,

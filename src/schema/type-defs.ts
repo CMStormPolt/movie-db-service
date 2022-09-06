@@ -14,14 +14,27 @@ export const typeDefs = gql`
 
     type Query {
         movies(input: SearchForMoviesInput): [Movie]!,
-        movie(name: String!): Movie
+        movie(id: ID!): Movie
     }  
+
+    type Mutation {
+        createMovie(input: createMovieInput): Movie
+    }
 
     input SearchForMoviesInput {
         name: String,
         year: Int,
         sortByDate: String,
         limit: Int
+    }
+
+    input createMovieInput {
+        name: String!
+        year: Int!,
+        genres: [String] = [],
+        stars: [ID] = [],
+        isInTheaters: Boolean = false,
+        posterUrl: String = ""
     }
 
     
@@ -54,9 +67,9 @@ export const typeDefs = gql`
 //         movie(name: String!): Movie
 //     }  
 
-//     type Mutation {
-//         createUser(input: createUserInput): User
-//     }
+    // type Mutation {
+    //     createUser(input: createUserInput): User
+    // }
 
     // input createUserInput {
     //     name: String!

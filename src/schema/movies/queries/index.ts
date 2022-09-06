@@ -1,8 +1,9 @@
-import { MovieModel } from '../../mongo/movie'
-import { cleanFilterInput } from '../../utils'
+import { MovieModel } from '../../../mongo/movie'
+
+//Queries
+
 async function moviesGet(par, args) {
-    const cleanedInput = cleanFilterInput(args.input)
-    const mongoData = await mongoMovies(cleanedInput)
+    const mongoData = await mongoMovies(args.input)
     return mongoData
 }
 
@@ -41,8 +42,3 @@ interface searchFilterOptions {
     sort?: { createDate: number },
     limit?: number
 }
-
-
-// export const movieMutations = {
-//     movies: moviesGet
-// }

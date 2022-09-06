@@ -1,23 +1,23 @@
-import { Schema, model } from 'mongoose';
-export interface movieInt {
+import { Schema } from 'mongoose';
+export interface Movie {
     // id: number,
     name: string,
     year: number,
     isInTheaters: boolean,
-    genres: [movieGenres],
+    genres: [MovieGenres],
     stars: [Schema.Types.ObjectId],
     posterUrl: string,
     createDate: Schema.Types.Date
 }
 
-export enum movieGenres {
+export enum MovieGenres {
     THRILLER,
     ACTION,
     FANTASY,
     DRAMA
 }
 
-export interface movieActor {
+export interface MovieActor {
     // id: number,
     name: string
 }

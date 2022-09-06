@@ -23,16 +23,11 @@ export const resolvers = {
         //         return movie.name == name
         //     })
         // },
-    }
-    // Mutation: {
-    //     createUser: (par, args) => {
-    //         const { input } = args
-    //         input.friends = []
-    //         input.id = userList.length + 1
-    //         userList.push(input)
-    //         return input
-    //     }
-    // },
+    },
+
+    Mutation: {
+        ...movies.mutations
+    },
     // User: {
     //     favouriteMovies: (par, args) => {
     //         return movies
