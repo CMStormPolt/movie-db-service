@@ -6,7 +6,7 @@ export const typeDefs = gql`
         _id: ID!,
         name: String!,
         year: Int!,
-        genres: [String]!,
+        genres: [Int]!,
         stars: [ID]!,
         isInTheaters: Boolean!,
         posterUrl: String!
@@ -18,7 +18,7 @@ export const typeDefs = gql`
     }  
 
     type Mutation {
-        createMovie(input: createMovieInput): Movie
+        createMovie(input: CreateMovieInput): Movie
     }
 
     input SearchForMoviesInput {
@@ -28,10 +28,10 @@ export const typeDefs = gql`
         limit: Int
     }
 
-    input createMovieInput {
+    input CreateMovieInput {
         name: String!
         year: Int!,
-        genres: [String] = [],
+        genres: [Int] = [],
         stars: [ID] = [],
         isInTheaters: Boolean = false,
         posterUrl: String = ""

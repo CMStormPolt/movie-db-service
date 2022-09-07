@@ -6,6 +6,5 @@ export function cleanFilterInput(input = {}){
         }
         return result;
     }, {}); 
-    console.log(conditions, 'condi')
     return conditions
 }
