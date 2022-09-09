@@ -9,7 +9,14 @@ export const typeDefs = gql`
         genres: [Int]!,
         stars: [ID]!,
         isInTheaters: Boolean!,
-        posterUrl: String!
+        posters: [Poster]!
+    }
+
+    type Poster {
+        sourceId: ID!,
+        url: String!,
+        deleteHash: String!,
+        isMain: Boolean
     }
 
     type Query {
@@ -34,7 +41,14 @@ export const typeDefs = gql`
         genres: [Int] = [],
         stars: [ID] = [],
         isInTheaters: Boolean = false,
-        posterUrl: String = ""
+        posters: [PosterInput] = []
+    }
+
+    input PosterInput {
+        sourceId: ID!,
+        url: String!,
+        deleteHash: String!,
+        isMain: Boolean
     }
 
     

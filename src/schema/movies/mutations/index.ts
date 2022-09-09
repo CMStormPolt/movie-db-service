@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 import { MovieModel } from '../../../mongo/movie'
-import { MovieGenres } from '../../../types/movies'
+import { MovieGenres, Poster } from '../../../types/movies'
 
 //Mutations
 
@@ -28,7 +28,7 @@ interface createMovieInput {
     isInTheaters: boolean,
     genres: Array<MovieGenres>,
     stars: Array<Schema.Types.ObjectId>,
-    posterUrl: string,
+    posters: Array<Poster>,
 }
 
 

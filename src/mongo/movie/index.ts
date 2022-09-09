@@ -7,7 +7,7 @@ const movieMongoSchema = new Schema<Movie>({
     isInTheaters: { type: Boolean, required: true, default: false },
     genres: { type: [Number], required: true, enum:  MovieGenres, default: [],}, 
     stars: { type: [Schema.Types.ObjectId], required: true, default: [] },
-    posterUrl: { type: String, required: false, default: "" },
+    posters: { type: [{sourceId: String, url: String, deleteHash: String}], required: false, default: [] },
     createDate: { type: Date, required: true, default: Date.now}
   });
 
